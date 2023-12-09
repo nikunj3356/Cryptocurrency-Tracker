@@ -1,0 +1,13 @@
+{
+  "short_name": "Crypto Currency Tracker",
+  "name": "Crypto Currency Tracker",
+  "icons": {
+    "48": "logo512.png",
+    "128": "logo512.png"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "manifest_version": 3,
+  "version": "1.0.0"
+}
