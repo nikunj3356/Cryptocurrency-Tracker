@@ -4,7 +4,7 @@ import DatePickerValue from "./DatePickerValue";
 import dayjs from "dayjs";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const CryptoDetails = ({ selectedUrl, setSelectedUrl }) => {
   const [details, setDetails] = useState(null);
@@ -41,11 +41,14 @@ const CryptoDetails = ({ selectedUrl, setSelectedUrl }) => {
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const res = await axios.post("http://localhost:5000/currency", {
-        url: selectedUrl,
-        timeStart: fromDate.unix(),
-        timeEnd: toDate.unix(),
-      });
+      const res = await axios.post(
+        "https://crypto-tracker-chrome-extension.onrender.com/currency",
+        {
+          url: selectedUrl,
+          timeStart: fromDate.unix(),
+          timeEnd: toDate.unix(),
+        }
+      );
       const details = res.data.data.data;
       setDetails(details);
       setMarketCapPercentageChange(
@@ -65,9 +68,12 @@ const CryptoDetails = ({ selectedUrl, setSelectedUrl }) => {
 
   return (
     <div className="p-3">
-        <div className="flex flex-row w-full justify-center">
-            <ArrowBackIcon className="cursor-pointer" onClick={() => setSelectedUrl(null)} />
-        </div>
+      <div className="flex flex-row w-full justify-center">
+        <ArrowBackIcon
+          className="cursor-pointer"
+          onClick={() => setSelectedUrl(null)}
+        />
+      </div>
       <div className="flex flex-row w-full justify-between text-xl">
         <div className="font-bold">Currency</div>
         <div className="font-bold">Market Cap %</div>
@@ -75,8 +81,8 @@ const CryptoDetails = ({ selectedUrl, setSelectedUrl }) => {
       {details ? (
         <div className="flex flex-row w-full justify-between">
           <div className="flex flex-row">
-              <div>{details.name}</div>
-              <div className="ml-3 text-slate-500">{details.symbol}</div>
+            <div>{details.name}</div>
+            <div className="ml-3 text-slate-500">{details.symbol}</div>
           </div>
           <div
             className={

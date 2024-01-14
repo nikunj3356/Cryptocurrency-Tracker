@@ -1,13 +1,20 @@
 {
-  "short_name": "Crypto Currency Tracker",
-  "name": "Crypto Currency Tracker",
+  "manifest_version": 3,
+  "name": "Cryptocurrency Tracker",
+  "description": "A Web scraping tool to calculate weekly change in Market Cap for Cryptocurrencies",
+  "version": "1.0.0",
   "icons": {
+    "16": "logo512.png",
     "48": "logo512.png",
     "128": "logo512.png"
   },
   "action": {
-    "default_popup": "index.html"
-  },
-  "manifest_version": 3,
-  "version": "1.0.0"
+    "default_popup": "index.html",
+    "default_title": "Cryptocurrency Tracker",
+    "default_icon": {
+      "16": "logo512.png",
+      "24": "logo512.png",
+      "32": "logo512.png"
+    }
+  }
 }
