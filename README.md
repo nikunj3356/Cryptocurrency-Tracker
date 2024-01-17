@@ -1,4 +1,4 @@
-# Cryptocurrency Tracker Chrome Extension
+# Cryptocurrency Tracker
 
 ## Introduction
 This web scraping tool is a robust solution designed to extract cryptocurrency data from the CoinMarketCap website. Leveraging a combination of technologies, including the Cheerio library for web scraping, Node.js and Express for the backend APIs, and React for the frontend Chrome extension, I have created a seamless and efficient data exploration experience for cryptocurrency enthusiasts.
